@@ -39,7 +39,8 @@ final class Array {
     * @param quantity the number of integers in the array
     * @return the mean of the integers
     */
-    public static double mean(final Integer[] arrayOfIntegers, Integer quantity) {
+    public static double mean(final Integer[] arrayOfIntegers,
+        final Integer quantity) {
         double mean = 0;
 
         for (int meanCounter = quantity - 1; meanCounter != -1; meanCounter--) {
@@ -59,7 +60,8 @@ final class Array {
     * @param quantity the number of integers in the array
     * @return the median of the integers
     */
-    public static double median(final Integer[] arrayOfIntegers, double quantity) {
+    public static double median(final Integer[] arrayOfIntegers,
+        final double quantity) {
         double median = 0;
         final double extra = 0.5;
         Arrays.sort(arrayOfIntegers);
@@ -81,7 +83,8 @@ final class Array {
     * @param quantity the number of integers in the array
     * @return the mode of the integers
     */
-    public static ArrayList<Integer> mode(final Integer[] arrayOfIntegers, double quantity) {
+    public static ArrayList<Integer> mode(final Integer[] arrayOfIntegers,
+        final double quantity) {
         // Constants.
         final ArrayList<Integer> maxValue = new ArrayList<Integer>();
         // Variables.
@@ -92,7 +95,10 @@ final class Array {
         int counterOneRepeat;
         int counterTwoRepeat;
 
-        // This has a one because of the temprorary 0 that is put into the arraylist.
+        /*
+        * This has a one because of the temprorary 0 that is put into
+        * the arraylist.
+        */
         int valuesInMaxValue = 1;
         int addMode = 0;
         maxValue.add(0);
@@ -100,7 +106,8 @@ final class Array {
         for (counterOne = 0; counterOne < quantity; ++counterOne) {
             int count = 0;
             for (counterTwo = 0; counterTwo < quantity; ++counterTwo) {
-                if (arrayOfIntegers[counterTwo] == arrayOfIntegers[counterOne]) {
+                if (arrayOfIntegers[counterTwo]
+                    == arrayOfIntegers[counterOne]) {
                     ++count;
                 }
             }
@@ -109,14 +116,18 @@ final class Array {
                 currentMaxCount = count;
             }
         }
-        for (counterOneRepeat = 0; counterOneRepeat < quantity; ++counterOneRepeat) {
+        for (counterOneRepeat = 0; counterOneRepeat < quantity;
+            ++counterOneRepeat) {
             int countTwo = 0;
-            for (counterTwoRepeat = 0; counterTwoRepeat < quantity; ++counterTwoRepeat) {
-                if (arrayOfIntegers[counterTwoRepeat] == arrayOfIntegers[counterOneRepeat]) {
+            for (counterTwoRepeat = 0; counterTwoRepeat < quantity;
+                ++counterTwoRepeat) {
+                if (arrayOfIntegers[counterTwoRepeat]
+                    == arrayOfIntegers[counterOneRepeat]) {
                     ++countTwo;
                 }
                 if (countTwo == currentMaxCount) {
-                    for (counterThree = 0; counterThree < valuesInMaxValue; ++counterThree) {
+                    for (counterThree = 0; counterThree < valuesInMaxValue;
+                        ++counterThree) {
                         if ((int) (arrayOfIntegers[counterOneRepeat])
                             == (int) (maxValue.get(counterThree))) {
                             addMode = 1;
